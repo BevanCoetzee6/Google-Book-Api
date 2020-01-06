@@ -1,14 +1,35 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <base href="/">
   <meta charset="utf-8">
   <title>GoogleBooksAPITesting</title>
-  <base href="/">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
   <app-root></app-root>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAQuCWa6tUF7Q3cIhqmrBM0venbisrBYQg",
+      authDomain: "bc-project-66ced.firebaseapp.com",
+      databaseURL: "https://bc-project-66ced.firebaseio.com",
+      projectId: "bc-project-66ced",
+      storageBucket: "bc-project-66ced.appspot.com",
+      messagingSenderId: "1056411149720",
+      appId: "1:1056411149720:web:0606deee78c2713757b7ed",
+      measurementId: "G-PRP9KGVRSJ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </body>
 </html>

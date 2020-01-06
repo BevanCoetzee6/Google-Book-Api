@@ -1,0 +1,41 @@
+<div class="container custom-container-2">
+
+  <!--Show it when there is no employee-->
+  <div class="no-data text-center" *ngIf="bookData.totalItems == 0">
+    <p>No Book Found!</p>
+    <button class="btn btn-outline-primary" routerLink="/search-book">Search A Book</button>
+  </div>
+
+  <!--Employees list table, it hides when there is no employee-->
+  <div *ngIf="bookData.totalItems !== 0">
+    <h3 class="mb-3 text-center">{{bookData.volumeInfo.title}}</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Author</th>
+            <th scope="col">Publisher</th>
+          </tr>
+        </thead>
+        <tbody>
+            <td class="text-center" style="text-align: center;">
+              <img
+                  [src]=bookData.volumeInfo.imageLinks.smallThumbnail
+                  [alt]=bookData.volumeInfo.title class="img-responsive" style="max-height: 250px;"
+              >
+            </td>
+            <td>{{bookData.volumeInfo.title}}</td>
+            <td>{{bookData.volumeInfo.description}}</td>
+            <td>{{bookData.volumeInfo.authors}}</td>
+            <td>{{bookData.volumeInfo.publisher}}</td>
+        </tbody>
+      </table>
+      <button class="btn btn-outline-primary" routerLink="/">Search Another Book</button>
+      <!-- <button class="btn btn-outline-warning" routerLink="">Back</button> -->
+    </div>
+  </div>
+</div>
